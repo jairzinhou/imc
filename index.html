@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+      
+      input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+      }
+      input[type=number] { 
+         -moz-appearance: textfield;
+         appearance: textfield;
+
+      }
+      *{
+        box-sizing:border-box.
+      }
+      body{
+        display:flex;
+        height:100vh;
+        justify-content:center;
+        align-items:center;
+        background: linear-gradient(105deg,  #66e287 42.86%, #42d48b 50%, #04c58d 57.14%, #00b990 64.29%, #00ae93 71.43%, #00a597 78.57%, #009e9b 85.71%, #0098a0 92.86%, #0095a7 100%);
+        text-align:center
+        
+      }
+      input{
+        margin-bottom:20px;
+        background:rgba(0, 0, 27, 0.85);
+        border-radius:10px;
+        width:40vh;
+        outline:none;
+        border:none;
+        color:white;
+        font-size:15px;
+        padding:10px;
+        appearance: none;
+        
+      }
+      .container{
+        background:linear-gradient(105deg,  #66e287 42.86%, #42d48b 50%, #04c58d 57.14%, #00b990 64.29%, #00ae93 71.43%, #00a597 78.57%, #009e9b 85.71%, #0098a0 92.86%, #0095a7 100%);
+        box-shadow:0 1px 10px;
+        border-radius:20px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding:50px;
+      }
+      h1{
+        font-family:arial;
+        font-size:30px;
+      }
+      button{
+        margin-top:20px;
+        padding:20px;
+        width:70%;
+        border-radius:10px;
+        border:none;
+        background:rgba(5, 210, 100);
+        font-size:20px;
+        cursor:pointer;
+        outline:none;
+      }
+      button:hover{
+        background:rgba(5, 210, 100,0.6);
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    
+    <div class='container'>
+      <h1>Preencha os campos<br> para calcular seu IMC</h1>
+      <div class='inicio'>
+        <input type='number' id='inicio' placeholder='Peso(kg)'>
+      </div>
+
+      <div class='fim'>
+        <input type='number' id='fim' placeholder='Altura(m)'>
+      </div>
+      
+      <button onclick="myFunction()">Calcular</button>
+
+      <h2 id='resultado'>Agurdando...</h2>
+      <h2 id='resul'></h2>
+
+    </div>
+
+    
+
+    <script>
+      function myFunction() {
+    
+        let peso = document.getElementById('inicio').value
+        let altura = document.getElementById('fim').value
+        let resultado = document.getElementById('resultado')
+        let resu=l = document.getElementById('resul')
+        
+        
+            let i =inicio
+            let f =fim
+            
+            let calculo = peso/(altura**2)
+            
+            resultado.innerHTML=`seu IMC é de ${calculo.toFixed(2)}`
+            
+            if(calculo<17){
+            resul.innerHTML='Muito abaixo do peso' 
+            }
+            else if(calculo <25){
+              resul.innerHTML='Peso normal' 
+            }
+            else if(calculo <30){
+              resul.innerHTML='Acima do Peso' 
+            }
+            else if(calculo <35){
+              resul.innerHTML='Obesidade grau I' 
+            }
+            else if(calculo <40){
+              resul.innerHTML='Obesidade grau II' 
+            }
+            else{
+              resul.innerHTML='Obesidade grau III' 
+            }
+
+      }
+    </script> 
+  </body>
+
+</html>
